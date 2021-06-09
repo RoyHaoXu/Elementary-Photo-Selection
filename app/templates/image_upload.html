@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Elementary Selection</title>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="static/basic.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<h1>Upload Image</h1>
+
+	<form method="get" action="/" enctype="multipart/form-data">
+		<p>
+			<input type="submit" value="Back to main menu">
+		</p>
+	</form>
+
+
+	<h2>Select Recommendation Option:</h2>
+
+	<form method="post" action="/result" enctype="multipart/form-data">
+		<label for="style_weight">Recommendation Options:</label><br>
+		<select class="form-control" method="POST" id="rec_option" name="rec_option">
+			<option selected>Recommendation</option>
+			<option>Album Generation</option>
+
+		</select>
+
+
+		<select class="form-control" method="POST" id="feature_selection" name="feature_selection">
+			<option selected>Style</option>
+			<option>Object</option>
+			<option>Combined</option>
+
+		</select>
+
+		<br>
+		<br>
+		<label for="style_weight">Style Weight:</label><br>
+		<input type="text" id="style_weight" name="style_weight" value="1">
+		<br>
+
+		<dl>
+			<p>
+				<input type="file" name="file" autocomplete="off" required>
+			</p>
+		</dl>
+
+		<p>
+			<input type="submit" value="Submit">
+		</p>
+	</form>
+
+</body>
+</html>

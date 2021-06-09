@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Elementary Selection</title>
+<head>
+    <meta charset="UTF-8">
+    <link href="static/basic.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Elementary Selection</h1>
+	<form method="get" action="/" enctype="multipart/form-data">
+		<p>
+			<input type="submit" value="Back to main menu">
+		</p>
+	</form>
+
+    <form method="get" action="/image_upload" enctype="multipart/form-data">
+		<p>
+			<input type="submit" value="Back to photo upload">
+		</p>
+	</form>
+
+    <h2>Your Image:</h2>
+    <div class="myGallery">
+        <img src={{ upload_file_location }} style="width:auto; height: 300px" class="center"/>
+    </div>
+
+    <h2>Recommendation Results:</h2>
+
+    {% for cluster in clusters %}
+        <h4>Cluster Option:</h4>
+        <div class="myGallery">
+            {% for image in cluster %}
+                <img src={{ image }} class="center"/>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+
+</body>
+</html>

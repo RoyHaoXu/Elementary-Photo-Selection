@@ -1,0 +1,86 @@
+featurize_object:
+  featurize_object_features:
+    # Acceptable file extensions
+    image_extensions:
+      - ".jpg"
+
+    # Configuration for getting feature extraction layer from VGG16 model
+    extractor_config:
+      weights: "imagenet"
+      include_top: True
+    extractor_layer: "fc2"
+
+featurize_style:
+  featurize_style_features:
+    # Acceptable file extensions
+    image_extensions:
+      - ".jpg"
+
+    # BGR for rainbow colors, used to calculate color distribution for pictures
+    colors:
+      red:
+        - 0
+        - 0
+        - 255
+      orange:
+        - 0
+        - 127
+        - 255
+      yellow:
+        - 0
+        - 255
+        - 255
+      green:
+        - 0
+        - 255
+        - 0
+      cyan:
+        - 255
+        - 255
+        - 0
+      blue:
+        - 255
+        - 0
+        - 0
+      purple:
+        - 255
+        - 0
+        - 143
+
+rds_db:
+  PhotoManager:
+    add_offline_df:
+      # Whether truncate existing tables
+      truncate: 1
+
+
+model:
+  # Try hyper-parameters and check sil score
+  tune_model:
+    min_k: 2
+    max_k: 150
+    sil_metric: 'euclidean'
+    affinity: 'euclidean'
+    linkage: 'ward'
+    feature_selection: 'combined'
+    style_weight: 2
+  # Try hyper-parameters and check result
+  run_model:
+    k_optimal: 80
+    sil_metric: 'euclidean'
+    affinity: 'euclidean'
+    linkage: 'ward'
+    feature_selection: 'combined'
+    style_weight: 2
+    thumb_height: 100
+    figsize:
+      - 10
+      - 100
+      -
+  # Use optimal configuration to get cluster df
+  get_cluster_df:
+    k_optimal: 80
+    affinity: 'euclidean'
+    linkage: 'ward'
+    feature_selection: 'combined'
+    style_weight: 2

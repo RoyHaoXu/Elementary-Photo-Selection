@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Elementary Selection</title>
+<head>
+    <meta charset="UTF-8">
+    <link href="static/basic.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Elementary Selection</h1>
+    <p>Upload an image to start:</p>
+
+    <form method="get" action="/image_upload" enctype="multipart/form-data">
+        <p>
+            <input type="submit" value="Upload Image">
+        </p>
+    </form>
+
+    <div class="myGallery">
+        <img src={{ samples[0] }} />
+        <img src={{ samples[1] }} />
+        <img src={{ samples[2] }} />
+    </div>
+
+    <div class="myGallery">
+        <img src={{ samples[3] }} />
+        <img src={{ samples[4] }} />
+        <img src={{ samples[5] }} />
+    </div>
+
+</body>
+</html>
