@@ -170,7 +170,7 @@ make image
 
 #### 2.1 Upload Raw Data to S3 
 The following command will upload raw images to s3 according to the configurations in `Makefile`.
-This is only needed if you have offline pictures that you want to upload to s3.)
+This is only needed if you have offline pictures that you want to upload to s3.
 
 ```
 make upload_to_s3
@@ -178,7 +178,7 @@ make upload_to_s3
 
 #### 2.2 Download Raw Data from S3 (only needed if your pictures are saved on s3)
 The following command will download raw images from s3 according to the configurations in `Makefile`.
-This is only needed if you have s3 pictures that you want to download to local. For this project I saved all the raw images on s3 bucket,so download is needed for pipeline. 
+This is only needed if you have s3 pictures that you want to download to local. For this project I saved all the raw images on s3 bucket,so download is needed for pipeline. Alternatively you can also manually copy your images to `data/raw_images` to use the pipeline. 
 The following command will download the images to data folder for offline model tuning. 
 ```
 make download_from_s3
