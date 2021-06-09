@@ -92,6 +92,8 @@ To measure the business impact, we can perform AB testing on two versions of the
 │
 ├── figures/                          <- Generated graphics and figures to be used in reporting, documentation, etc
 │
+├── plots/                            <- Generated graphics and figures to be used in model tuning
+│
 ├── models/                           <- Trained model objects (TMOs), model predictions, and/or model summaries
 │
 ├── src/                              <- Source data for the project 
